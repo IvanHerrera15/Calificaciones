@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 var port= 3000;
 
 //Conectarse a la base de datos
-mongoose.connect('mongodb://localhost:27017/alumnos');
+require("./config/db");
 
 //Rutas con el prefijo api
 app.use('/plf', index);
