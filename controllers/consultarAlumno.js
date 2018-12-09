@@ -13,6 +13,13 @@ router.route('/alumnos')
         res.json(alumnos); 
     });
 });
+router.route('/alumnos/:nc')
+.get(function(req, res) {
+    Alumno.find({No_Control:req.params.nc},{_id:0,__v:0,"Materias._id":0,"Materias.Unidades._id":0},function(err, alumnos) {
+        if (err) { res.send(err) }
+        res.json(alumnos); 
+    });
+});
 
 //Exportar el objeto router 
 module.exports = router;
